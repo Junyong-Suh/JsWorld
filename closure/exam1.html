@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title> Closure example I </title>
+	<script language="javascript">
+		function foo(x) {
+			var tmp = 3;
+			return function (y) {
+				alert(x + y + (++tmp));
+			}
+		}
+
+		var bar = foo(2);
+		bar(10);	// 16
+		bar(10);	// 17
+
+		var car	= bar;
+		car(10);	// 18
+		car(10);	// 19
+
+		var dar = foo(2);
+		dar(10);	// 16
+		dar(10);	// 17
+	</script>
+</head>
+<body>
+	Please allow JavaScript to be executed to see the result! :]
+</body>
+</html>
